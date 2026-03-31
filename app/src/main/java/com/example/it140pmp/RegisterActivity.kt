@@ -416,7 +416,6 @@ class RegisterActivity : ComponentActivity() { // <--- CHANGED HERE
 
     private suspend fun kTORadd(context: Context) {
         val client = HttpClient(CIO)
-        println("Sending data (GET request): Username='$usernameInput', Password='${passwordInput.take(2)}...', Email='$emailInput'")
         try {
             val response: HttpResponse = client.get("http://192.168.254.104/MaluPET/REST/add_record1.php") {
                 url {
@@ -426,7 +425,6 @@ class RegisterActivity : ComponentActivity() { // <--- CHANGED HERE
                 }
             }
             val stringBody: String = response.body<String>()
-            println("HTTP Status: ${response.status.toString()}")
             context.toast(stringBody)
         } catch (e: Exception) {
             val errorMessage = when (e) {

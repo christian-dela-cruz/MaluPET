@@ -63,61 +63,17 @@ class MainActivity : ComponentActivity() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                Column(
+                // Logo
+                Image(
+                    painter = painterResource(id = R.drawable.pet5),
+                    contentDescription = "App Logo",
                     modifier = Modifier
-                        .fillMaxSize()
-                        .padding(horizontal = 28.dp, vertical = 32.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    // Logo
-                    Image(
-                        painter = painterResource(id = R.drawable.pet5),
-                        contentDescription = "App Logo",
-                        modifier = Modifier
-                            .height(300.dp)
-                            .padding(bottom = 16.dp)
-                            .width(300.dp)
-                    )
+                        .height(300.dp)
+                        .padding(bottom = 16.dp)
+                        .width(300.dp)
+                )
 
-                    // Title
-                    Text(
-                        text = "MALUPET",
-                        style = MaterialTheme.typography.headlineLarge.copy(
-                            fontWeight = FontWeight.ExtraBold,
-                            fontSize = 56.sp,
-                            letterSpacing = 2.sp
-                        ),
-                        color = Color(0xFF004D40),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(bottom = 16.dp),
-                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
-                    )
-
-                    // Tagline
-                    Text(
-                        text = "Your Pet's Best Friend",
-                        style = MaterialTheme.typography.headlineLarge.copy(
-                            fontWeight = FontWeight.ExtraBold,
-                            fontSize = 36.sp
-                        ),
-                        color = Color(0xFF00796B),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(bottom = 24.dp),
-                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
-                    )
-
-                    // Get Started Button
-                    AppButton(
-                        onClick = {
-                            mContext.startActivity(Intent(mContext, RegisterActivity::class.java))
-                        },
-                        text = "Get Started"
-                    )
-                }
-
+                // Title
                 Text(
                     text = "MALUPET",
                     style = MaterialTheme.typography.headlineLarge.copy(
@@ -146,10 +102,9 @@ class MainActivity : ComponentActivity() {
                     textAlign = androidx.compose.ui.text.style.TextAlign.Center
                 )
 
-                // "Get Started" Button
+                // Get Started Button
                 AppButton(
                     onClick = {
-                        // Navigate to the RegisterActivity
                         mContext.startActivity(Intent(mContext, RegisterActivity::class.java))
                     },
                     text = "Get Started"
