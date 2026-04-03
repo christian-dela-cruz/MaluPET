@@ -31,8 +31,13 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
+
+val baseUrl = project.findProperty("BASE_URL")?.toString() ?: "http://your-server-ip/MaluPET/REST"
+
+android.defaultConfig.buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
 
 dependencies {
 
