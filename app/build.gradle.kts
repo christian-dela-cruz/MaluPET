@@ -11,6 +11,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        val baseUrl = project.findProperty("BASE_URL")?.toString() ?: "https://your-server-ip/MaluPET/REST"
+        buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
     }
 
     buildTypes {
@@ -34,10 +37,6 @@ android {
         buildConfig = true
     }
 }
-
-val baseUrl = project.findProperty("BASE_URL")?.toString() ?: "http://your-server-ip/MaluPET/REST"
-
-android.defaultConfig.buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
 
 dependencies {
 

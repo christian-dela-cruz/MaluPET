@@ -40,7 +40,7 @@ MaluPET is an Android mobile application that helps pet owners keep track of the
 
    Open `gradle.properties` and set the `BASE_URL` property to your server's address:
    ```properties
-   BASE_URL=http\://your-server-ip/MaluPET/REST
+   BASE_URL=https\://your-server-ip/MaluPET/REST
    ```
 
    This value is injected at build time as `BuildConfig.BASE_URL` and used in `LoginActivity.kt` and `RegisterActivity.kt`.
