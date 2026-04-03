@@ -417,7 +417,7 @@ class RegisterActivity : ComponentActivity() { // <--- CHANGED HERE
     private suspend fun kTORadd(context: Context) {
         val client = HttpClient(CIO)
         try {
-            val response: HttpResponse = client.get("http://192.168.254.104/MaluPET/REST/add_record1.php") {
+            val response: HttpResponse = client.get("${BuildConfig.BASE_URL}/add_record1.php") {
                 url {
                     parameters.append("username", usernameInput)
                     parameters.append("password", passwordInput)

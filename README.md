@@ -38,18 +38,12 @@ MaluPET is an Android mobile application that helps pet owners keep track of the
 
 2. **Configure the backend URL**
 
-   Open the following files and replace the hardcoded IP address with your server's address:
-   - `app/src/main/java/com/example/it140pmp/LoginActivity.kt` — `loginRequest()` function
-   - `app/src/main/java/com/example/it140pmp/RegisterActivity.kt` — `kTORadd()` function
+   Open `gradle.properties` and set the `BASE_URL` property to your server's address:
+   ```properties
+   BASE_URL=https\://your-server-ip/MaluPET/REST
+   ```
 
-   Change:
-   ```kotlin
-   client.get("http://192.168.254.104/MaluPET/REST/...")
-   ```
-   To your server's URL:
-   ```kotlin
-   client.get("http://<YOUR_SERVER_IP>/MaluPET/REST/...")
-   ```
+   This value is injected at build time as `BuildConfig.BASE_URL` and used in `LoginActivity.kt` and `RegisterActivity.kt`.
 
 3. **Build and run**
 

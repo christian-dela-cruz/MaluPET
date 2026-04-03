@@ -275,7 +275,7 @@ class LoginActivity : ComponentActivity() {
     private suspend fun loginRequest(username: String, password: String, context: Context) {
         val client = HttpClient(CIO)
         try {
-            val response: HttpResponse = client.get("http://192.168.254.104/MaluPET/REST/login_account.php") {
+            val response: HttpResponse = client.get("${BuildConfig.BASE_URL}/login_account.php") {
                 url {
                     parameters.append("username", username)
                     parameters.append("password", password)
